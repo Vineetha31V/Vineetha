@@ -113,7 +113,8 @@ src/
 ![website image 3](<Screenshot (51).png>)
 ![Website image 4](<Screenshot (52).png>)
 ![Website image 5](<Screenshot (53).png>)
-![Website image 6](<Screenshot (55).png>)
+![Website image 6](<Screenshot (54).png>)
+![Website image 7](<Screenshot (55).png>)
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
