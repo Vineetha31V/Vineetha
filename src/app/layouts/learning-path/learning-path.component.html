@@ -1,0 +1,42 @@
+<div class="learning-paths-section">
+  <h2>Choose Your Learning 
+    <img src="assets/images/onehand book.png" alt="Learning Illustration"/>
+  </h2>
+  <p>
+    Explore personalized learning paths, gain new skills, and advance your career with our L&D resources.
+  </p>
+
+  <!-- Category Buttons -->
+  <div class="categories">
+    <button *ngFor="let category of categories" 
+            class="category-btn" 
+            [ngClass]="{'active': selectedCategory === category}" 
+            (click)="selectCategory(category)">
+      {{ category }}
+    </button>
+  </div>
+
+  <!-- Carousel Section -->
+  <div class="carousel-container">
+    <button class="carousel-control left" (click)="prevSlide()">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+  
+    <div class="carousel" #carousel>
+      <div class="card" *ngFor="let card of filteredCards; let i = index">
+        <div class="image-container">
+          <img [src]="card.image" alt="Card Image" class="card-img">
+          <a class="download-btn" [href]="card.pdfUrl" download>Download</a>
+        </div>
+        <div class="card-content">
+          <h6>{{ card.title }}</h6>
+          <p>Instructor: {{ card.instructor }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <button class="carousel-control right" (click)="nextSlide()">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

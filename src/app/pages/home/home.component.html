@@ -1,0 +1,108 @@
+<div class="container">
+    <app-header ></app-header>
+    <div class="tech-core col-12 col-md-7 container justify-content-start">
+        <h6 class="tech-core__title">tech.at.core</h6>
+        <div class="d-flex m-0 p-0">
+          <h1 class="tech-core__heading">Empower Your Growth</h1>
+          <span class="tech-core__icon-wrapper"><img src="assets/images/bookstable.png" alt="Learning Illustration" class="tech-core__icon-wrapper"/></span>
+        </div>
+        <h1 class="tech-core__heading m-0"  ><span class="tech-core__text m-0 p-0">With Continuous Learning</span></h1>
+        
+        <p class="tech-core__description">Explore personalised learning paths, gain new skills, and advance your career with our L&D resources.</p>
+    
+        <button class="tech-core__button btn rounded-pill px-4">Get Started</button>
+    </div>
+    <app-learning-path></app-learning-path>
+    <div class="learning-path-container">
+        <div class="content-wrapper">
+            <div class="left-content">
+                <div class="text-content">
+                  
+                    <h1 class="m-0 p-0">
+                      <span class="title-text">Start Learning, Build Our Future Together</span>
+                      <span class="tech-core__icon-wrapper"><img src="assets/images/hands.png" alt="Learning Illustration"/></span>
+                    </h1>
+                  
+                  <p>
+                    Start a course today to earn certifications, knowledge, and skills
+                    that advance your career and strengthen our company's future.
+                  </p>
+                </div>
+                <div class="button-group">
+                    <button class="learning-button learning-button--pink "><img src="assets/images/plus.png"class="icon-plus"  alt="Learning Illustration"  /> “Earn Certifications That Matter”</button>
+                    <button class="learning-button learning-button--green" ><img src="assets/images/plus.png"class="icon-plus" alt="Learning Illustration"  /> “Master New Skills for Success”</button>
+                    <button class="learning-button learning-button--orange" ><img src="assets/images/plus.png" class="icon-plus"alt="Learning Illustration" /> “Become a Champion of Knowledge”</button>
+                </div>
+            </div>
+            <div class="illustration">
+                <img src="assets/images/books.png" alt="Learning Illustration" class="illustration__books" /> 
+                <img src="assets/images/lady.png" alt="Learning Illustration" class="illustration__lady" />
+            </div>
+        </div>
+      </div>
+
+    <div class="new-arrivals-container">
+        <div>
+            <div class="section-header">
+                <h2>New Arrivals to Explore <span><img src="assets/images/new.png" alt="New Badge" class="new-badge"/></span></h2>
+                <p>Discover the latest courses designed to keep you ahead.</p>
+            </div>
+            
+            <div class="courses-slider-container">
+                <div class="navigation-controls">
+                    <button class="slider-btn prev" (click)="prevSlideCourses()" *ngIf="currentSlideCourses > 0" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" (click)="nextSlideCourses()" *ngIf="hasNextSlideCourses" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="courses-track" [style.transform]="'translateX(' + slideOffsetCourses + 'px)'" role="list">
+                    <div class="course-card" *ngFor="let card of courseCards " role="listitem">
+                        <div class="course-image">
+                            <img [src]="'assets/images/' + card.image" [alt]="card.title">
+                        </div>
+                        <div class="course-content">
+                            <h3 [title]="card.title">{{card.title}}</h3>
+                            <p class="instructor">Instructor: {{card.instructor}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="recommended-courses-container">
+        <div >
+            <div class="section-header">
+                <h2>Recommended Just for You<span><img src="assets/images/gift.png" alt="New Badge" class="new-badge"/></span></h2>
+                <p>Courses handpicked to align with your learning goals.</p>
+            </div>
+            
+            <div class="recommended-slider-container">
+                <div class="navigation-controls">
+                    <button class="slider-btn prev" (click)="prevSlideRecommended()" *ngIf="currentSlideRecommended > 0" aria-label="Previous slide">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="slider-btn next" (click)="nextSlideRecommended()" *ngIf="hasNextSlideRecommended" aria-label="Next slide">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="recommended-track" [style.transform]="'translateX(' + slideOffsetRecommended + 'px)'" role="list">
+                    <div class="recommended-card" *ngFor="let card of recommmendedCards" role="listitem">
+                        <div class="course-image">
+                            <img [src]="'assets/images/' + card.image" [alt]="card.title">
+                        </div>
+                        <div class="course-content">
+                            <h3 [title]="card.title">{{card.title}}</h3>
+                            <p class="instructor">Instructor: {{card.instructor}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-success></app-success>
+ </div> 
+ <app-footer></app-footer>

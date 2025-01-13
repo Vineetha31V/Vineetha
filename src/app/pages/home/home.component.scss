@@ -1,0 +1,659 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/animations';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  // padding: $spacing-xl $spacing-xl * 2;
+}
+
+.tech-core {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: $spacing-xl 0;
+  max-width: 600px;
+  margin-left: 0px;
+
+  &__title {
+    color: #004D87;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    @include animate(fadeIn, 0.5s);
+  }
+
+  &__heading {
+    font-size:50px;
+    font-weight: 700;
+    color: $text-color;
+    position: relative;
+    @include animate(slideInLeft, 0.5s);
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    width: 42px;
+    height: 31px;
+    margin-left: 10px;
+    @include animate(fadeIn, 0.5s, 0.2s);
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    margin-top: 0;
+    line-height: 1;
+  }
+
+  &__description {
+    font-size: $font-size-lg;
+    font-weight: 400;
+    color: $secondary-color;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+    @include animate(fadeIn, 0.5s, 0.4s);
+  }
+
+  &__button {
+    @include button-base;
+    background-color:#004D87;
+    color: white;
+    width: 135px;
+    height: 46px;
+    padding: 12px;
+    font-weight: 600;
+    font-size: $font-size-base;
+    align-self: flex-start;
+    box-shadow: 3px 5px 0px 0px #2597E440;
+
+    
+    &:hover {
+      box-shadow: 1px 3px 0px 0px #2597E440;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-md) {
+  .header__get-started-btn {
+    margin-left: 420px;
+  }
+}
+
+.learning-path-container {
+  padding: $spacing-xl 0;
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: $spacing-xl * 2;
+  }
+
+  .left-content {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  .text-content {
+    h1 {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+
+      .title-text {
+        flex: 1;
+        font-size: 44px;
+        font-weight: 700;
+        line-height: 1.2;
+        
+        @media (max-width: $breakpoint-md) {
+          font-size: 36px;
+        }
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: 32px;
+        }
+      }
+
+      .tech-core__icon-wrapper {
+        display: flex;
+        align-items: flex-start;
+        // padding-top: 8px;
+        
+        img {
+          width: 40px;
+          height: 35px;
+          
+          // object-fit: contain;
+        }
+      }
+
+      @media (max-width: $breakpoint-md) {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+
+    p {
+      font-size: $font-size-lg;
+      font-weight: 400;
+      color: $secondary-color;
+      line-height: 1.5;
+      margin-bottom: 0;
+      @include animate(fadeIn, 0.5s, 0.2s);
+    }
+  }
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+    @include animate(fadeIn, 0.5s, 0.3s);
+  }
+
+  .learning-button {
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    background: white;
+    font-size: $font-size-base;
+    font-weight: 600;
+    width: 100%;
+    transition: all 0.3s ease;
+    text-align: left;
+
+    img.icon-plus {
+      width: 24px;
+      height: 24px;
+      margin-right: $spacing-md;
+    }
+
+    &--pink {
+      // color: #e374c2;
+      border: 1px solid #e374c2;
+      
+    }
+
+    &--green {
+      // color: #28a745;
+      border: 1px solid #0c4a54;
+
+    }
+
+    &--orange {
+      // color: #ff9800;
+      border: 1px solid #ff9800;
+      
+    }
+  }
+
+  .illustration {
+    position: relative;
+    width: 40%;
+    min-height: 400px;
+    margin-top: 2rem;
+    
+    &__wrapper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    &__books {
+      width: 180px;
+      height: auto;
+      object-fit: contain;
+      position: absolute;
+      right: 180px;
+      top: 50px;
+      z-index: 1;
+    }
+
+    &__lady {
+      width: 280px;
+      height: auto;
+      object-fit: contain;
+      position: absolute;
+      right: -50px;
+      top: 120px;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    .illustration {
+      &__books {
+        width: 160px;
+        right: 180px;
+      }
+
+      &__lady {
+        width: 250px;
+        right: -30px;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .illustration {
+      width: 100%;
+      min-height: 300px;
+      
+      &__wrapper {
+        justify-content: center;
+      }
+
+      &__books {
+        width: 140px;
+        right: 0;
+        left: 35%;
+      }
+
+      &__lady {
+        width: 220px;
+        right: 20%;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    .illustration {
+      min-height: 250px;
+      
+      &__books {
+        width: 120px;
+        left: 10%;
+      }
+
+      &__lady {
+        width: 180px;
+        right: 10%;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-lg) {
+  .container {
+    padding: $spacing-lg;
+  }
+  .tech-core__heading {
+    font-size: 61px;
+  }
+  .learning-path-container{
+    padding: $spacing-lg;
+  }
+  .text-content{
+    h1 {
+       font-size: 20px;
+    }
+  }
+  
+}
+
+@media (max-width: $breakpoint-md) {
+  .container {
+    padding: $spacing-lg;
+  }
+
+  .tech-core {
+    max-width: 100%;
+    
+    &__heading {
+      font-size: 50px;
+      
+    }
+    
+    &__description {
+      font-size: $font-size-base;
+    }
+     &__text{
+      margin-top: 0
+      ;
+     }
+
+  }
+
+  .learning-path-container {
+    .content-wrapper {
+      flex-direction: column;
+      gap: $spacing-xl;
+    }
+
+    .left-content {
+      max-width: 100%;
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .container {
+    padding: $spacing-md;
+  }
+
+  .tech-core {
+    &__heading {
+      font-size: 30px;
+    }
+    
+    &__description {
+      font-size: $font-size-sm;
+    }
+  }
+  
+}
+
+.courses-slider-container,.recommended-slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  .courses-track,.recommended-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+    width: 100%;
+  }
+
+  .navigation-controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 10;
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      pointer-events: auto;
+      border: none;
+      transition: all 0.3s ease;
+
+      &.prev {
+        left: 0;
+      }
+
+      &.next {
+        right: 0px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        width: 28px;
+        height: 28px;
+
+        i {
+          font-size: $font-size-sm;
+        }
+      }
+
+      i {
+        font-size: $font-size-base;
+      }
+    }
+  }
+
+  .course-card,.recommended-card {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+
+    @media (min-width: $breakpoint-md) {
+      flex: 0 0 50%;
+      width: 50%;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      flex: 0 0 33.333%;
+      width: 33.333%;
+    }
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .course-content {
+      padding: $spacing-lg;
+
+      h3 {
+        font-size: $font-size-lg;
+        font-weight: 600;
+        margin-bottom: $spacing-base;
+        color: $text-color;
+      }
+
+      .instructor {
+        font-size: $font-size-base;
+        color: $secondary-color;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Hide scrollbar but allow scrolling
+.courses-slider-container,.recommended-slider-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.courses-slider-container::after,.recommended-slider-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100%;
+  pointer-events: none;
+}
+
+.new-arrivals-container , .recommended-courses-container{
+  margin-top:50px ;
+ 
+  @media (max-width: $breakpoint-md) {
+    margin-top: 100px;
+    padding: 20px;
+  }
+  // @media (max-width: $breakpoint-sm) {
+  //   margin-top: 100px;
+  //   padding: 0px;
+  // }
+  @media (max-width: $breakpoint-lg) {
+    
+      padding: 20px;
+    
+  }
+  .section-header {
+    text-align: start;
+    margin-bottom: $spacing-xl;
+
+    h2 {
+      font-size: 44px;
+      font-weight: 700;
+      color: $text-color;
+      margin-bottom: $spacing-sm;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: $spacing-sm;
+      @include animate(slideInLeft, 0.5s);
+
+      .new-badge {
+        width: 34px;
+        height: 35px;
+        margin-bottom:30px;
+      }
+    }
+
+    p {
+      font-size: $font-size-lg;
+      color: $secondary-color;
+      @include animate(fadeIn, 0.5s, 0.2s);
+    }
+  }
+
+  .courses-grid {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-lg;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      .desktop-only {
+        display: none !important;
+      }
+    }
+
+    .course-card {
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &.hidden {
+        display: none;
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+      }
+
+      .course-image {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .slider-controls {
+          position: absolute;
+          top: 50%;
+          right: 10px;
+          transform: translateY(-50%);
+          z-index: 2;
+
+          .slider-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.8);
+            }
+
+            i {
+              font-size: 14px;
+              right: 10px;
+            }
+          }
+        }
+      }
+
+      .course-content {
+        padding: $spacing-lg;
+
+        h3 {
+          font-size: $font-size-lg;
+          font-weight: 600;
+          color: $text-color;
+          margin-bottom: $spacing-sm;
+          line-height: 1.4;
+        }
+
+        .instructor {
+          font-size: $font-size-base;
+          color: $secondary-color;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    .courses-grid {
+      .course-card:nth-child(n+4) {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    .courses-grid {
+      .course-card:nth-child(n+3) {
+        display: none;
+      }
+    }
+  }
+}

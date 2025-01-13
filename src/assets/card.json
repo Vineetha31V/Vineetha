@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Foundations of Web Design: Building Effective and Engaging Websites",
+        "instructor": "Instructor: Sarah Blake",
+        "imageUrl":"assets/images/1stL.png",
+         "pdf": "assets/pdf/web-design.pdf"
+    },
+    {
+        "title": "Foundations of Web Design: Building Effective and Engaging Websites",
+        "instructor": "Instructor: Sarah Blake",
+        "imageUrl":"assets/images/2ndL.png",
+         "pdf": "assets/pdf/web-design.pdf"
+    },
+    {   
+        "title": "Foundations of Web Design: Building Effective and Engaging Websites",
+        "instructor": "Instructor: Sarah Blake",
+        "imageUrl":"assets/images/3rdL.png",
+         "pdf": "assets/pdf/web-design.pdf"
+    }
+]
+
+
+

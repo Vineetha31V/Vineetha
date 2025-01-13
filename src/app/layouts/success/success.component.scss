@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import '../../styles/variables';
+@import '../../styles/mixins';
+@import '../../styles/animations';
+
+
+.success-container {
+    // padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-sm) {
+    .success-container{
+        padding: 100px;
+    }
+    }
+
+    .explore-section {
+        text-align: start;
+        margin-bottom: 60px;
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 40px;
+            font-weight: 800    ;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            .first-line {
+                display: flex;
+                align-items: center;
+                // white-space: nowrap;
+
+                .meesage-icon {
+                    width: 24px;
+                    height: 24px;
+                    margin: 0 5px;
+                    vertical-align: middle;
+                }
+            }
+
+            .second-line {
+                
+                align-items: flex-start;  
+            }
+           
+        }
+        @media (max-width: $breakpoint-md) {
+            h1{
+                padding: 30px;
+            }
+        }    
+        
+    }
+
+    .testimonials {
+        display: flex;
+        gap: 20px;
+        justify-content: start;
+        flex-wrap: wrap;
+       @media(max-width: 995px) {
+        justify-content: center;
+       }
+
+        .testimonial-card {
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
+            padding: 25px;
+           
+            // border-radius: 12px;
+            position: relative;
+            background: white;
+            // box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            &.pink-border {
+                border: 2px solid #FF9ECD;
+            }
+
+            &.blue-border {
+                border: 2px solid #7CC9FF;
+            }
+
+            &.light-blue-border {
+                border: 2px solid #B4E4FF;
+            }
+
+            .quote-icon {
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                background:transparent;
+                // padding: 5px;
+                width: 32px;
+                height: 32px;
+               
+            }
+
+            blockquote {
+                margin: 15px 0;
+                font-size: 1.1rem;
+                line-height: 1.6;
+                font-style: italic;
+                color: #000000;
+            }
+
+            .instructor {
+                margin-top: 15px;
+                color: #666;
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .contact-section {
+        margin-top: 80px;
+        text-align: start;
+        display: flex;
+        flex-direction:row;
+        gap: 20px;
+
+        @media screen and (max-width: 995px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 44px;
+            // margin-bottom: 20px;
+            font-weight: 800;
+            color: #333;
+        }
+
+        .question-block {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 35px;
+
+            @media screen and (max-width: 995px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h6 {
+                color: #111827;
+                font-size: 20px;
+                line-height: 1.6;
+            }
+
+            .contact-btn {
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                // margin-left: auto;
+                padding: 8px 20px;
+                border-radius: 30px;
+                background: none;
+                color: #004d87;
+                box-shadow: 3px 5px 0px 0px #2597E440;
+                border: 1px solid #004d87;
+              
+                &:hover {
+                  background: none;
+                  color: #004D87;
+                  box-shadow: 1px 3px 0px 0px #2597E440
+                }
+            }
+        }
+    }
+}

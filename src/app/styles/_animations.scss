@@ -1,0 +1,98 @@
+// Keyframes
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.05); }
+}
+
+// Animation Mixins
+@mixin animate($animation, $duration: 0.3s, $delay: 0s, $fill-mode: forwards) {
+  animation: $animation $duration ease $delay;
+  animation-fill-mode: $fill-mode;
+}
+
+@mixin hover-glow($color) {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba($color, 0.3);
+  }
+}
+
+@mixin hover-scale {
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin hover-lift {
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin button-click {
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@mixin stagger-children($initial-delay: 0.3s, $item-delay: 0.1s) {
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation: slideInUp 0.3s ease forwards;
+      animation-delay: $initial-delay + ($i - 1) * $item-delay;
+    }
+  }
+}
+
+@mixin hover-transform {
+  transition: transform 0.1s ease;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+@mixin shimmer-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
