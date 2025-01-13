@@ -109,10 +109,10 @@ src/
 
 ##Images
 ![Website image 1](<Screenshot (49).png>)
-![website image 2](<Screenshot (49)-1.png>)
+![website image 2](<Screenshot (50).png>)
 ![website image 3](<Screenshot (51).png>)
 ![Website image 4](<Screenshot (52).png>)
-![Website image 5](<Screenshot (52)-2.png>)
+![Website image 5](<Screenshot (53).png>)
 ![Website image 6](<Screenshot (55).png>)
 ## License
 
