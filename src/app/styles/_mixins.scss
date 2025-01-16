@@ -1,0 +1,83 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin responsive($breakpoint) {
+  @if $breakpoint == sm {
+    @media (max-width: $breakpoint-sm) { @content; }
+  }
+  @if $breakpoint == md {
+    @media (max-width: $breakpoint-md) { @content; }
+  }
+  @if $breakpoint == lg {
+    @media (max-width: $breakpoint-lg) { @content; }
+  }
+  @if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+@mixin button-base {
+  padding: 12px 24px;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+@mixin heading-base {
+  font-family: $font-family-base;
+  color: $text-color;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+@mixin card-base {
+  background: white;
+  border-radius: $spacing-base;
+  padding: $spacing-lg;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@mixin grid-layout($columns: 3, $gap: $spacing-lg) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+
+  @include responsive(lg) {
+    grid-template-columns: repeat(min($columns - 1, 2), 1fr);
+  }
+
+  @include responsive(md) {
+    grid-template-columns: repeat(min($columns - 2, 1), 1fr);
+  }
+
+  @include responsive(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin truncate-text($lines: 1) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @if $lines == 1 {
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+  }
+}
+
+@mixin link-base {
+  text-decoration: none;
+  cursor: pointer;
+}

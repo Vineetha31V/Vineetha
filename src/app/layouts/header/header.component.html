@@ -1,0 +1,62 @@
+<header class=" navbar header navbar-expand-lg  py-3 fixed-top">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <div class="header__logo">
+      <img src="assets/images/tac.png" alt="Logo" class="header__logo-img" />
+    </div>
+
+    <!-- Toggle Button -->
+    <button
+      class="navbar-toggler header__toggle-btn"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#headerNav"
+      aria-controls="headerNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="headerNav">
+      <nav class="navbar-nav d-flex align-items-center header__nav">
+        <a class="header__nav-link" >Home</a>
+
+        <!-- Categories Dropdown -->
+        <div class="dropdown header__dropdown">
+          <button
+            class="btn dropdown-toggle header__dropdown-btn"
+            type="button"
+            id="categoriesDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Categories <i class="ri-arrow-down-s-line"></i>
+          </button>
+          <ul class="dropdown-menu header__dropdown-menu" aria-labelledby="categoriesDropdown">
+            <li
+              *ngFor="let category of categories"
+              class="dropdown-item header__dropdown-item"
+              (mouseenter)="hoveredCategory = category"
+              (mouseleave)="hoveredCategory = null"
+            >
+              <div class="header__dropdown-content">
+                <li >{{ category.name }}<i class="fas fa-chevron-right" ></i></li>
+                <ul *ngIf="hoveredCategory === category" class="header__subcategory-list">
+                  <li *ngFor="let subcategory of category.subcategories" >
+                    <a routerLink="learning-path"> {{ subcategory }}<i class="fas fa-chevron-right"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+        <!-- Get Started Button -->
+      <button class="btn header__get-started-btn">Get Started</button>
+    
+    </div>
+  </div>
+</header>

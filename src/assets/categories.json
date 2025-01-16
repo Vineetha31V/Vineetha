@@ -1,0 +1,23 @@
+[
+    {
+      "name": "Web Development",
+      "image": "assets/images/web-development.png",
+      "subcategories": ["Frontend Development", "Backend Development", "React JS", "Node JS"]
+    },
+    {
+      "name": "Java",
+      "image": "assets/images/java.png",
+      "subcategories": ["Spring", "Hibernate", "JPA"]
+    },
+    {
+      "name": "UI/UX Design",
+      "image": "assets/images/ui-ux-design.png",
+      "subcategories": ["Figma", "Adobe XD", "Sketch"]
+    },
+    {
+      "name": "Testing",
+      "image": "assets/images/testing.png",
+      "subcategories": ["Manual Testing", "Automation Testing", "Selenium"]
+    }
+  ]
+      
