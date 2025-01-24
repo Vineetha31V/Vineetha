@@ -143,7 +143,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
       const maxSlideCourses = Math.max(0, this.totalCardsCourses - this.visibleCardsCourses);
       this.currentSlideCourses = Math.min(this.currentSlideCourses, maxSlideCourses);
       this.slideOffsetCourses = this.calculateSlideOffsetCourses();
-    }
+    } 
   }
 
   calculateSlideOffsetCourses(): number {
