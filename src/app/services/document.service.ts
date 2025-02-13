@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { map, Observable, of } from 'rxjs';
 import { Document } from '../models/document.model';
 
 @Injectable({ providedIn: 'root' })
 export class DocumentService {
-  private apiUrl = 'https://localhost:8080/api/search'; // Replace with your API
+  private apiUrl = 'http://localhost:8080/api/search'; // Replace with your API
 
   constructor(private http: HttpClient) {}
 
   getDocuments(type: 'jira' | 'confluence'): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}?query=Jira Ticket&type=${type}`);
+    return this.http.get<any>(`${this.apiUrl}?query=Jira Ticket&type=${type}`).pipe(
+      map(response => response?.results || []) 
+    );
   }
   // getDocuments(): Observable<Document[]> {
   //   // Static dummy data

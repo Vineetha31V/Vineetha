@@ -41,10 +41,12 @@ export class DocumentListComponent implements OnInit {
 
   loadDocuments(): void {
     this.documentService.getDocuments(this.activeTab).subscribe(data => {
-      this.documents = this.activeTab === 'jira' ? data.jira_tickets.tickets : data.confluence_pages.pages;
+      this.documents = data; // Directly assign data if it contains the array
+      console.log(this.documents);
       this.filterDocuments();
     });
-  }
+}
+
   // loadMockDocuments(): void {
   //   const mockData = {
   //     jira: [

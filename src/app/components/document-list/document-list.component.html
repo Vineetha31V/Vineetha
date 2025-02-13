@@ -7,7 +7,7 @@
     </div>
     
     <div *ngFor="let doc of filteredDocuments" class="document-item">
-      <img [src]="doc.icon" alt="icon" />
+      <!-- <img [src]="doc.icon" alt="icon" /> -->
       <div>
         <h3>
           <a [href]="getDocumentLink(doc)" target="_blank">{{doc.name || doc.summary || doc.title }}</a>
